@@ -5,20 +5,20 @@ Choosing a nail design can be overwhelming. There are too many colors, styles, s
 PickMyNails is a lightweight Python application with a simple GUI that selects a nail design specificaly for you.
 Perfect when you're on your way to your appointment and can’t decide what to pick 👍
 
-## 📌 Project Overview
+## Project Overview 📌 
 PickMyNails is a simple graphical application that randomly selects a nail style for the user.
 The app helps people who struggle to choose their nail design by generating a random combination of:
 
-* 🎨 **Color**
-* 💅 **Shape**
-* ✨ **Decoration**
+* **Color** 🎨 
+* **Shape** 💅 
+* **Decoration** ✨ 
 
 The user can either spin each category individually or generate a **Full Set Spin** which picks all three at once.
 An image representing the selected option is displayed when possible.
 
 ---
 
-## 🎯 What This Project Does
+## What This Project Does 🎯 
 
 * Provides a roulette-like randomizer for nail designs.
 * Displays matching images for styles (color/shape/decor).
@@ -27,7 +27,7 @@ An image representing the selected option is displayed when possible.
   
 ---
 
-## 📥 Input
+## Input 📥 
 
 The program does **not** require user-provided files.
 Input is via the GUI and includes only:
@@ -37,7 +37,7 @@ Input is via the GUI and includes only:
 
 ---
 
-## 📤 Output
+## Output 📤 
 
 * The GUI displays:
 
@@ -52,7 +52,7 @@ Input is via the GUI and includes only:
 
 ---
 
-## 🖼 Image Handling
+## Image Handling 🖼 
 
 Each option corresponds to a filename.
 For example:
@@ -71,7 +71,7 @@ PickMyNails/images/
 
 ---
 
-## 🛠️ Installation Instructions
+## Installation Instructions 🛠️ 
 
 ### 1. Clone the repository
 
@@ -93,7 +93,7 @@ python .\PickMyNails\nails_roulette.py
 
 ---
 
-## 🧪 Tests
+## Tests 🧪 
 
 * Random selection functions
 * File handling for images
@@ -101,7 +101,7 @@ python .\PickMyNails\nails_roulette.py
 
 ---
 
-## 🔧 Technical Details
+## Technical Details 🔧 
 
 * Language: **Python 3**
 * GUI: **Tkinter**
@@ -110,7 +110,7 @@ python .\PickMyNails\nails_roulette.py
 
 ---
 
-## 🌱 Future Improvements
+## More Improvements 🌱 
 
 * Combined image preview (overlay of color + shape + decoration)
 * Saving favorite sets
