@@ -69,22 +69,22 @@ class NailRouletteApp:
             return None
         return Image.open(path).convert("RGBA")
 
-    def update_image(self):
-        """Update a single image (for individual spins)"""
-        base = None
-        if self.current_color:
-            base = self.load_image("colors", self.current_color)
-        if base and self.current_shape:
-            shape = self.load_image("shapes", self.current_shape)
-            if shape:
-                base = Image.alpha_composite(base, shape)
-        if base and self.current_deco:
-            deco = self.load_image("decorations", self.current_deco)
-            if deco:
-                base = Image.alpha_composite(base, deco)
-        if base:
-            self.current_img = ImageTk.PhotoImage(base)
-            self.image_label.config(image=self.current_img)
+    def update_image(self, category=None, item=None):
+        """
+        Update image for a single spin.
+        If category/item are given, show only that image.
+        """
+        if category and item:
+            img = self.load_image(category, item)
+            if img:
+                # Resize to fixed height
+                height = 200
+                ratio = height / img.height
+                img = img.resize((int(img.width * ratio), height))
+                self.current_img = ImageTk.PhotoImage(img)
+                self.image_label.config(image=self.current_img)
+            else:
+                self.image_label.config(image="")
         else:
             self.image_label.config(image="")
 
@@ -96,18 +96,18 @@ class NailRouletteApp:
     # ---------- SPIN FUNCTIONS ----------
     def spin_color(self):
         self.current_color = random.choice(COLORS)
-        self.update_image()
         self.update_text()
+        self.update_image("colors", self.current_color)
 
     def spin_shape(self):
         self.current_shape = random.choice(SHAPES)
-        self.update_image()
         self.update_text()
+        self.update_image("shapes", self.current_shape)
 
     def spin_decoration(self):
         self.current_deco = random.choice(DECORATIONS)
-        self.update_image()
         self.update_text()
+        self.update_image("decorations", self.current_deco)
 
     def full_spin(self):
         # animated spin
